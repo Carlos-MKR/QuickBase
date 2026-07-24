@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function destroy(Request $request)
+    public function destroy(Request $request): RedirectResponse
     {
         $request->validate([
             'password' => ['required', 'current_password'],
